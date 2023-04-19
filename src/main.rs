@@ -11,12 +11,12 @@ struct User {
 #[tokio::main]
 async fn main() -> Result<(), Error> {
     // Make a GET request to https://www.rust-lang.org
-    let resp = reqwest::get("https://www.rust-lang.org")
-        .await?
-        .text()
-        .await?;
+    // let resp = reqwest::get("https://www.rust-lang.org")
+    //     .await?
+    //     .text()
+    //     .await?;
 
-    println!("Response: {}", resp);
+    // println!("Response: {}", resp.);
 
     fetch_data().await?;
 
@@ -26,8 +26,8 @@ async fn main() -> Result<(), Error> {
 async fn fetch_data() -> Result<(), Error> {
     let request_url = format!(
         "https://api.github.com/repos/{owner}/{repo}/stargazers",
-        owner = "rust-lang-nursery",
-        repo = "rust-cookbook"
+        owner = "bujosa",
+        repo = "guide-for-backend-developers"
     );
     println!("Requesting {}", request_url);
 
